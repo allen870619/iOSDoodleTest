@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad7_9" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CanvasTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1133" height="744"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLL-6Z-wUa" customClass="Canvas" customModule="CanvasTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24" width="1133" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-fC-WUf">
+                                <rect key="frame" x="0.0" y="624" width="1133" height="120"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-bA-uZv">
+                                        <rect key="frame" x="441.5" y="44.5" width="250" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APt-zp-PmL">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="revert"/>
+                                                <connections>
+                                                    <action selector="onRevert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zw-G6-lJv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhB-Mb-gKT">
+                                                <rect key="frame" x="94" y="0.0" width="62" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                                <connections>
+                                                    <action selector="onClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXt-SM-K1V"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5L-3Y-ZEA">
+                                                <rect key="frame" x="188" y="0.0" width="62" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="save"/>
+                                                <connections>
+                                                    <action selector="onSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4cz-le-q6r"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="jWb-bA-uZv" firstAttribute="centerX" secondItem="Xwz-fC-WUf" secondAttribute="centerX" id="3R3-o2-uWo"/>
+                                    <constraint firstAttribute="height" constant="120" id="QhC-BN-UCt"/>
+                                    <constraint firstItem="jWb-bA-uZv" firstAttribute="centerY" secondItem="Xwz-fC-WUf" secondAttribute="centerY" id="cXj-fT-QMR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLL-6Z-wUa" secondAttribute="trailing" id="5qQ-Km-QXf"/>
+                            <constraint firstItem="Xwz-fC-WUf" firstAttribute="top" secondItem="uLL-6Z-wUa" secondAttribute="bottom" id="6gk-tP-0NY"/>
+                            <constraint firstAttribute="bottom" secondItem="Xwz-fC-WUf" secondAttribute="bottom" id="NEq-qt-94j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xwz-fC-WUf" secondAttribute="trailing" id="Tae-8Y-rSl"/>
+                            <constraint firstItem="uLL-6Z-wUa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dOU-of-4HK"/>
+                            <constraint firstItem="uLL-6Z-wUa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="koU-9c-4dr"/>
+                            <constraint firstItem="Xwz-fC-WUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lms-t5-rmj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="canvas" destination="uLL-6Z-wUa" id="vg9-de-Umf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

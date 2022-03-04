@@ -61,11 +61,11 @@
 				9F0865D527B11AF5004C69A6 /* AppDelegate.swift */,
 				9F0865D727B11AF5004C69A6 /* SceneDelegate.swift */,
 				9F0865D927B11AF5004C69A6 /* ViewController.swift */,
-				9F0865DB27B11AF5004C69A6 /* Main.storyboard */,
-				9F0865DE27B11AF7004C69A6 /* Assets.xcassets */,
-				9F0865E027B11AF7004C69A6 /* LaunchScreen.storyboard */,
-				9F0865E327B11AF7004C69A6 /* Info.plist */,
 				9F0865E927B11B66004C69A6 /* Canvas.swift */,
+				9F0865DB27B11AF5004C69A6 /* Main.storyboard */,
+				9F0865E027B11AF7004C69A6 /* LaunchScreen.storyboard */,
+				9F0865DE27B11AF7004C69A6 /* Assets.xcassets */,
+				9F0865E327B11AF7004C69A6 /* Info.plist */,
 			);
 			path = CanvasTest;
 			sourceTree = "<group>";

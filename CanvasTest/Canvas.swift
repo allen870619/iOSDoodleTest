@@ -72,6 +72,15 @@ class Canvas: UIView{
         setNeedsDisplay()
     }
     
+    func exportPathData() -> [PathData]{
+        return pathData
+    }
+    
+    func setSnapShot(_ data: [PathData]){
+        pathData = data
+        setNeedsDisplay()
+    }
+    
     func export() -> UIImage? {
         if pathData.isEmpty{
             return nil

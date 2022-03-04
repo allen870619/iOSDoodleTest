@@ -23,40 +23,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-fC-WUf">
                                 <rect key="frame" x="0.0" y="624" width="1133" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-bA-uZv">
-                                        <rect key="frame" x="441.5" y="44.5" width="250" height="31"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APt-zp-PmL">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="revert"/>
-                                                <connections>
-                                                    <action selector="onRevert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zw-G6-lJv"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhB-Mb-gKT">
-                                                <rect key="frame" x="94" y="0.0" width="62" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Clear"/>
-                                                <connections>
-                                                    <action selector="onClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXt-SM-K1V"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5L-3Y-ZEA">
-                                                <rect key="frame" x="188" y="0.0" width="62" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="save"/>
-                                                <connections>
-                                                    <action selector="onSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4cz-le-q6r"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-bA-uZv">
+                                        <rect key="frame" x="16" y="42" width="1101" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="9eu-h6-31q"/>
+                                            <constraint firstAttribute="width" priority="500" id="qHZ-8Z-EER"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="jWb-bA-uZv" firstAttribute="centerX" secondItem="Xwz-fC-WUf" secondAttribute="centerX" id="3R3-o2-uWo"/>
+                                    <constraint firstItem="jWb-bA-uZv" firstAttribute="leading" secondItem="Xwz-fC-WUf" secondAttribute="leading" constant="16" id="MoX-rQ-BvU"/>
                                     <constraint firstAttribute="height" constant="120" id="QhC-BN-UCt"/>
+                                    <constraint firstAttribute="trailing" secondItem="jWb-bA-uZv" secondAttribute="trailing" constant="16" id="aNf-Zp-XaA"/>
                                     <constraint firstItem="jWb-bA-uZv" firstAttribute="centerY" secondItem="Xwz-fC-WUf" secondAttribute="centerY" id="cXj-fT-QMR"/>
                                 </constraints>
                             </view>
@@ -74,6 +54,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnStack" destination="jWb-bA-uZv" id="PTE-Ts-exS"/>
                         <outlet property="canvas" destination="uLL-6Z-wUa" id="vg9-de-Umf"/>
                     </connections>
                 </viewController>

@@ -22,25 +22,60 @@ class Canvas: UIView{
             return
         }
         
+        // stroke setup
+        context.setStrokeColor(strokeColor.cgColor)
+        context.setLineJoin(.bevel)
+        context.setLineCap(.round)
+        
+        // add points
         pathData.forEach { (pathData) in
-            for (i, path) in (pathData.path.enumerated()){
-                if i != 0{
-                    context.addLine(to: path)
-                    
-                    // line style
-                    if pathData.type == .pencil{
-                        context.setLineWidth(strokeWidth * (0.45 * pathData.force[i] + 0.75))
-                    }else{
-                        context.setLineWidth(strokeWidth)
+            // after, smooth but little bit slower(using three points)
+            if pathData.path.count >= 3{
+                var last1: CGPoint!
+                var last2: CGPoint!
+                
+                for (i, path) in (pathData.path.enumerated()){
+                    if i > 0 && i % 2 == 0{
+                        context.move(to: last1)
+                        let x =  (2 * last2.x)  - ((last1.x + path.x) / 2)
+                        let y =  (2 * last2.y)  - ((last1.y + path.y) / 2)
+                        context.addQuadCurve(to: path, control: CGPoint(x: x, y: y))
+                        
+                        // line style
+                        if pathData.type == .pencil{
+                            context.setLineWidth(strokeWidth * (0.45 * pathData.force[i] + 0.75))
+                        }else{
+                            context.setLineWidth(strokeWidth)
+                        }
+                        
+                        // draw
+                        context.strokePath()
                     }
-                    context.setStrokeColor(strokeColor.cgColor)
-                    context.setLineJoin(.bevel)
-                    context.setLineCap(.round)
-                    context.strokePath()
+                    // shift point
+                    last1 = last2
+                    last2 = path
                 }
-                context.move(to: path)
             }
-            context.closePath()
+            
+            // before, not smooth but faster
+            //            for (i, path) in (pathData.path.enumerated()){
+            //                if i > 0{
+            //                    context.addLine(to: path)
+            //
+            //                    // line style
+            //                    if pathData.type == .pencil{
+            //                        context.setLineWidth(strokeWidth * (0.45 * pathData.force[i] + 0.75))
+            //                    }else{
+            //                        context.setLineWidth(strokeWidth)
+            //                    }
+            //
+            //                    // draw
+            //                    context.strokePath()
+            //                }
+            //
+            //                // shift point
+            //                context.move(to: path)
+            //            }
         }
     }
     

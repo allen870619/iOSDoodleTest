@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="1133" height="744"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLL-6Z-wUa" customClass="Canvas" customModule="CanvasTest" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLL-6Z-wUa" customClass="CanvasView" customModule="CanvasTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24" width="1133" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-fC-WUf">
                                 <rect key="frame" x="0.0" y="624" width="1133" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-bA-uZv">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-bA-uZv">
                                         <rect key="frame" x="16" y="42" width="1101" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="9eu-h6-31q"/>

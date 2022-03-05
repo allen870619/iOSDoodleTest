@@ -6,13 +6,13 @@
 //
 import UIKit
 
-class Canvas: UIView{
+class CanvasView: UIView{
     // draw style
     var strokeWidth: CGFloat = 4
     var strokeColor: UIColor = .black
     
     // data
-    private var pathData = [PathData]()
+    private var paintData = PaintData()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -28,7 +28,7 @@ class Canvas: UIView{
         context.setLineCap(.round)
         
         // add points
-        pathData.forEach { (pathData) in
+        paintData.strokeList.forEach { (pathData) in
             // after, smooth but little bit slower(using three points)
             if pathData.path.count >= 3{
                 var last1: CGPoint!
@@ -81,43 +81,43 @@ class Canvas: UIView{
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // initial dataset
-        pathData.append(PathData(path: [CGPoint](), force: [CGFloat](), type: touches.first!.type))
+        paintData.strokeList.append(StrokePath(path: [CGPoint](), force: [CGFloat](), type: touches.first!.type))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, var lastSet = pathData.popLast() else {
+        guard let touch = touches.first, var lastSet = paintData.strokeList.popLast() else {
             return
         }
         
         lastSet.path.append(touch.location(in: self))
         lastSet.force.append(touch.type == .pencil ? touch.force : strokeWidth)
-        pathData.append(lastSet)
+        paintData.strokeList.append(lastSet)
         setNeedsDisplay()
     }
     
     func revertLast(){
-        if !pathData.isEmpty{
-            pathData.removeLast()
+        if !paintData.strokeList.isEmpty{
+            paintData.strokeList.removeLast()
             setNeedsDisplay()
         }
     }
     
     func clearCanvas(){
-        pathData.removeAll()
+        paintData.strokeList.removeAll()
         setNeedsDisplay()
     }
     
-    func exportPathData() -> [PathData]{
-        return pathData
+    func getPaintData() -> PaintData{
+        return paintData
     }
     
-    func setSnapShot(_ data: [PathData]){
-        pathData = data
+    func loadSnapShot(_ data: PaintData){
+        paintData = data
         setNeedsDisplay()
     }
     
     func export() -> UIImage? {
-        if pathData.isEmpty{
+        if paintData.strokeList.isEmpty{
             return nil
         }
         
@@ -131,20 +131,16 @@ class Canvas: UIView{
     
     func refresh(){
         self.setNeedsDisplay()
-    }
-    
+    }   
 }
 
-struct PathData{
+
+struct PaintData{ // whole doodle
+    var strokeList: [StrokePath] = []
+}
+
+struct StrokePath{ // each single stroke
     var path: [CGPoint]
     var force: [CGFloat]
     var type: UITouch.TouchType
-}
-
-extension UIImage {
-    func toPNG() -> UIImage? {
-        guard let imageData = self.pngData() else {return nil}
-        guard let imagePng = UIImage(data: imageData) else {return nil}
-        return imagePng
-    }
 }

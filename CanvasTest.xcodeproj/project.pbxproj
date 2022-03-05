@@ -13,7 +13,8 @@
 		9F0865DD27B11AF5004C69A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0865DB27B11AF5004C69A6 /* Main.storyboard */; };
 		9F0865DF27B11AF7004C69A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F0865DE27B11AF7004C69A6 /* Assets.xcassets */; };
 		9F0865E227B11AF7004C69A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0865E027B11AF7004C69A6 /* LaunchScreen.storyboard */; };
-		9F0865EA27B11B66004C69A6 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0865E927B11B66004C69A6 /* Canvas.swift */; };
+		9F0865EA27B11B66004C69A6 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0865E927B11B66004C69A6 /* CanvasView.swift */; };
+		9F2E8EE027D3372900A76C91 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E8EDF27D3372900A76C91 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		9F0865DE27B11AF7004C69A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F0865E127B11AF7004C69A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F0865E327B11AF7004C69A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F0865E927B11B66004C69A6 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		9F0865E927B11B66004C69A6 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		9F2E8EDF27D3372900A76C91 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +63,12 @@
 				9F0865D527B11AF5004C69A6 /* AppDelegate.swift */,
 				9F0865D727B11AF5004C69A6 /* SceneDelegate.swift */,
 				9F0865D927B11AF5004C69A6 /* ViewController.swift */,
-				9F0865E927B11B66004C69A6 /* Canvas.swift */,
+				9F0865E927B11B66004C69A6 /* CanvasView.swift */,
 				9F0865DB27B11AF5004C69A6 /* Main.storyboard */,
 				9F0865E027B11AF7004C69A6 /* LaunchScreen.storyboard */,
 				9F0865DE27B11AF7004C69A6 /* Assets.xcassets */,
 				9F0865E327B11AF7004C69A6 /* Info.plist */,
+				9F2E8EDF27D3372900A76C91 /* Utilities.swift */,
 			);
 			path = CanvasTest;
 			sourceTree = "<group>";
@@ -144,7 +147,8 @@
 				9F0865DA27B11AF5004C69A6 /* ViewController.swift in Sources */,
 				9F0865D627B11AF5004C69A6 /* AppDelegate.swift in Sources */,
 				9F0865D827B11AF5004C69A6 /* SceneDelegate.swift in Sources */,
-				9F0865EA27B11B66004C69A6 /* Canvas.swift in Sources */,
+				9F2E8EE027D3372900A76C91 /* Utilities.swift in Sources */,
+				9F0865EA27B11B66004C69A6 /* CanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
